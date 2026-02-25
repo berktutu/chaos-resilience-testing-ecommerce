@@ -16,6 +16,43 @@ app.get("/api/products", async (req, res) => {
   }
 });
 
+app.get("/api/products/:id", async (req, res) => {
+  try {
+    const response = await axios.get(
+      `http://localhost:4000/products/${req.params.id}`
+    );
+
+    res.json(response.data);
+  } catch (error) {
+    if (error.response && error.response.status === 404) {
+      return res.status(404).json({ error: "Product not found" });
+    }
+
+    res.status(503).json({ error: "Catalog service unavailable" });
+  }
+});
+
+app.get("/api/status", async (req, res) => {
+  const status = {
+    web: { status: "up" },
+    catalog: { status: "unknown" },
+  };
+
+  try {
+    const response = await axios.get("http://localhost:4000/health");
+    if (response.status === 200) {
+      status.catalog.status = "up";
+    } else {
+      status.catalog.status = "degraded";
+    }
+  } catch (error) {
+    status.catalog.status = "down";
+    status.catalog.error = error.message;
+  }
+
+  res.json(status);
+});
+
 app.get("/health", (req, res) => {
   res.json({ status: "up", service: "web" });
 });

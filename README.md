@@ -1,3 +1,5 @@
+(Ongoing)
+
 # Chaos & Resilience Testing – E-Commerce
 
 ## Project Goal

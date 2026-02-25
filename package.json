@@ -1,0 +1,28 @@
+{
+  "name": "chaos-resilience-testing-ecommerce",
+  "version": "1.0.0",
+  "description": "This project is a small microservice-based e-commerce demo built to showcase chaos and resilience testing. Instead of only testing happy paths, the goal here is to see how the system behaves when things break.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "playwright test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/berktutu/chaos-resilience-testing-ecommerce.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/berktutu/chaos-resilience-testing-ecommerce/issues"
+  },
+  "homepage": "https://github.com/berktutu/chaos-resilience-testing-ecommerce#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.58.2"
+  }
+}

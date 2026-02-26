@@ -1,7 +1,7 @@
 import { defineConfig, devices } from "@playwright/test";
 
 export default defineConfig({
-  testDir: "./tests/happy",
+  testDir: "./tests/chaos",
   use: {
     baseURL: "http://localhost:3000",
     headless: true,
@@ -27,12 +27,7 @@ export default defineConfig({
   ],
 
   webServer: [
-    {
-      command: "npm start",
-      cwd: "app/catalog",
-      port: 4000,
-      reuseExistingServer: true,
-    },
+    // CATALOG DOWN. ONLY THE WEB STARTS
     {
       command: "npm start",
       cwd: "app/web",

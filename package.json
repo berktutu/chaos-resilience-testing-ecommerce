@@ -8,7 +8,8 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "playwright test"
+    "test": "playwright test",
+    "test:chaos": "playwright test -c playwright.chaos.config.ts"
   },
   "repository": {
     "type": "git",
